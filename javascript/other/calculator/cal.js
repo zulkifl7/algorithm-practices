@@ -3,7 +3,9 @@ let commands = ""; // Stores the mathematical expression
 let display = ""; // Stores the expression to display on the screen
 let historyCal = []; // Stores the history of calculations
 let historyDisplay = []; // Stores the history to display on the screen
-let displayReset = false; // Flag to reset the display
+let onCalculationHold = []; // Stores the commands entered induvidually - for deletion
+let displayReset = 0; // Flag to reset the display
+let commandState = "";
 let ans = 0; // Stores the result of the previous calculation
 
 // Get screen elements
@@ -21,28 +23,33 @@ function factorial(n) {
 
 // Function for resetting the display
 function resetDisplay() {
-    if (displayReset) {
+    if (displayReset == 1) {
         display = "";
         screen.value = display;
         secondScreen.value = historyDisplay[historyDisplay.length - 1];
-        displayReset = false;
+        displayReset = 0;
+    }
+    else if (displayReset == 2) {
+        display = "";
+        screen.value = display;
+        displayReset = 0;
     }
 }
 
-// Function for handling button clicks
+//! Function for handling keyboard inputs - Todo
 
 
 // Add event listeners to buttons
 buttons.forEach((button) => {
 	button.addEventListener("click", () => {
-		console.log("Button clicked");
-		const input = button.getAttribute("data-value"); // Get the value of the clicked button
+        const input = button.getAttribute("data-value"); // Get the value of the clicked button
+		console.log("Button clicked " + input);
 
 		// Handle different button inputs
 		if (input === "=") {
 			// Evaluate the expression and display the result
 			try {
-                displayReset = true;
+                displayReset = 1;
 				const result = eval(commands); // Evaluate the expression
                 ans = result; // Store the result for future calculations
 				historyCal.push(commands + " = " + result); // Add the expression and result to history
@@ -56,6 +63,7 @@ buttons.forEach((button) => {
 				screen.value = "Error"; // Display "Error" if evaluation fails
 			}
 		} else if (input === "CE") {
+            displayReset = 2;
 			// Clear the expression and display
 			commands = "";
 			display = "";
@@ -131,8 +139,8 @@ buttons.forEach((button) => {
             resetDisplay();
 			// Add factorial function to the expression
 			try {
-				commands += "factorial(";
-				display += "!";
+				commands += "factorial(" ;
+				display += "factorial("  ;;
 				screen.value = display; // Update the main screen
 			} catch (e) {
 				screen.value = "Error";
@@ -171,6 +179,7 @@ buttons.forEach((button) => {
             resetDisplay();
 			// Add natural logarithm function to the expression
 			try {
+                // ! Fix : change log to ln
 				commands += "Math.log(";
 				display += "ln(";
 				screen.value = display; // Update the main screen
