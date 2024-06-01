@@ -1,7 +1,10 @@
 // Initialize variables
 let commands = ""; // Stores the mathematical expression
 let display = ""; // Stores the expression to display on the screen
-let history = []; // Stores the history of calculations
+let historyCal = []; // Stores the history of calculations
+let historyDisplay = []; // Stores the history to display on the screen
+let displayReset = false; // Flag to reset the display
+let ans = 0; // Stores the result of the previous calculation
 
 // Get screen elements
 let screen = document.getElementById("screen"); // Main screen
@@ -15,6 +18,20 @@ function factorial(n) {
 	return n ? n * factorial(n - 1) : 1; // Recursive factorial calculation
 }
 
+
+// Function for resetting the display
+function resetDisplay() {
+    if (displayReset) {
+        display = "";
+        screen.value = display;
+        secondScreen.value = historyDisplay[historyDisplay.length - 1];
+        displayReset = false;
+    }
+}
+
+// Function for handling button clicks
+
+
 // Add event listeners to buttons
 buttons.forEach((button) => {
 	button.addEventListener("click", () => {
@@ -25,11 +42,15 @@ buttons.forEach((button) => {
 		if (input === "=") {
 			// Evaluate the expression and display the result
 			try {
+                displayReset = true;
 				const result = eval(commands); // Evaluate the expression
-				history.push(commands + " = " + result); // Add the expression and result to history
-				console.log(history);
+                ans = result; // Store the result for future calculations
+				historyCal.push(commands + " = " + result); // Add the expression and result to history
+				historyDisplay.push(display + " = " + result); // Add the expression and result to history
+                console.log("On calculation : " + historyCal);
+                console.log("On display : " + historyDisplay);
 				screen.value = result; // Display the result on the main screen
-				secondScreen.value = commands + " = "; // Display the expression on the secondary screen
+				secondScreen.value = display + " = "; // Display the expression on the secondary screen
 				commands = ""; // Reset the expression
 			} catch (e) {
 				screen.value = "Error"; // Display "Error" if evaluation fails
@@ -41,11 +62,13 @@ buttons.forEach((button) => {
 			screen.value = "0"; // Reset the main screen to 0
 			secondScreen.value = ""; // Clear the secondary screen
 		} else if (input == "pow") {
+            resetDisplay();
 			// Add exponentiation operator to the expression
 			commands += "**";
 			display += "^";
 			screen.value = display; // Update the main screen
 		} else if (input == "sqrt") {
+            resetDisplay();
 			// Add square root function to the expression
 			try {
 				commands += "Math.sqrt(";
@@ -55,6 +78,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "sin") {
+            resetDisplay();
 			// Add sine function to the expression
 			try {
 				commands += "Math.sin(";
@@ -64,6 +88,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "cos") {
+            resetDisplay();
 			// Add cosine function to the expression
 			try {
 				commands += "Math.cos(";
@@ -73,6 +98,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "tan") {
+            resetDisplay();
 			// Add tangent function to the expression
 			try {
 				commands += "Math.tan(";
@@ -82,6 +108,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "log") {
+            resetDisplay();
 			// Add logarithm function to the expression
 			try {
 				commands += "Math.log(";
@@ -91,6 +118,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "pi") {
+            resetDisplay();
 			// Add pi constant to the expression
 			try {
 				commands += "Math.PI";
@@ -100,6 +128,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "factorial") {
+            resetDisplay();
 			// Add factorial function to the expression
 			try {
 				commands += "factorial(";
@@ -109,6 +138,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "persentage") {
+            resetDisplay();
 			// Add percentage calculation to the expression
 			try {
 				commands += "/100";
@@ -118,6 +148,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "e") {
+            resetDisplay();
 			// Add Euler's number to the expression
 			try {
 				commands += "Math.E";
@@ -127,6 +158,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "inv") {
+            resetDisplay();
 			// Add inverse calculation to the expression
 			try {
 				commands = "1/(";
@@ -136,6 +168,7 @@ buttons.forEach((button) => {
 				screen.value = "Error";
 			}
 		} else if (input == "ln") {
+            resetDisplay();
 			// Add natural logarithm function to the expression
 			try {
 				commands += "Math.log(";
@@ -144,7 +177,16 @@ buttons.forEach((button) => {
 			} catch (e) {
 				screen.value = "Error";
 			}
-		} else {
+		}
+        else if (input == "*") {
+            resetDisplay();
+            // Add the multiplication operator to the expression
+            commands += "*";
+            display += "×";
+            screen.value = display; // Update the main screen
+        
+        } else {
+            resetDisplay();
 			// Add the button input to the expression
 			commands += input;
 			display += input;
