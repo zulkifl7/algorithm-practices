@@ -17,9 +17,11 @@ buttons.forEach((button) => {
             commands = '';
             document.getElementById('screen').value = '';
         }
+        else if (input == ""){}
         
         else
         {
+            
             commands += input;
             document.getElementById('screen').value = commands;
         }
@@ -27,3 +29,4 @@ buttons.forEach((button) => {
 });
 
 console.log('Calculator loaded');
+console.log('eval : ', eval("2"));

@@ -18,72 +18,162 @@
 
       <!--! row1 -->
       <div class="row1 row">
-        <input type="submit" class="col1 col minus" id="button" value="+/-" />
-        <input
+        <button
+          type="submit"
+          class="col1 col minus"
+          id="button"
+          data-value="sign"
+        >
+          +/-
+        </button>
+        <button
           type="submit"
           class="col2 col persentage"
           id="button"
-          value="%"
-        />
-        <input
+          data-value="persentage"
+        >
+          %
+        </button>
+        <button
           type="submit"
           class="col3 col factorial"
           id="button"
-          value="x!"
-        />
-        <input type="submit" class="col4 col braOpen" id="button" value="(" />
-        <input type="submit" class="col5 col braClose" id="button" value=")" />
-        <input type="submit" class="col6 col del" id="button" value="del" />
-        <input type="submit" class="col7 col ce" id="button" value="CE" />
+          data-value="x!"
+        >
+          x!
+        </button>
+        <button
+          type="submit"
+          class="col4 col braOpen"
+          id="button"
+          data-value="("
+        >
+          (
+        </button>
+        <button
+          type="submit"
+          class="col5 col braClose"
+          id="button"
+          data-value=")"
+        >
+          )
+        </button>
+        <button type="submit" class="col6 col del" id="button" data-value="del">
+          del
+        </button>
+        <button type="submit" class="col7 col ce" id="button" data-value="CE">
+          CE
+        </button>
       </div>
 
       <!-- !row2  -->
       <div class="row2 row">
-        <input type="submit" class="col1 col inv" id="button" value="Inv" />
-        <input type="submit" class="col2 col sin" id="button" value="sin" />
-        <input type="submit" class="col3 col ln" id="button" value="ln" />
-        <input type="submit" class="col4 col num" id="button" value="7" />
-        <input type="submit" class="col5 col num" id="button" value="8" />
-        <input type="submit" class="col6 col num" id="button" value="9" />
-        <input type="submit" class="col7 col div" id="button" value="÷" />
+        <button type="submit" class="col1 col inv" id="button" data-value="Inv">
+          Inv
+        </button>
+        <button type="submit" class="col2 col sin" id="button" data-value="sin">
+          sin
+        </button>
+        <button type="submit" class="col3 col ln" id="button" data-value="ln">
+          ln
+        </button>
+        <button type="submit" class="col4 col num" id="button" data-value="7">
+          7
+        </button>
+        <button type="submit" class="col5 col num" id="button" data-value="8">
+          8
+        </button>
+        <button type="submit" class="col6 col num" id="button" data-value="9">
+          9
+        </button>
+        <button type="submit" class="col7 col div" id="button" data-value="÷">
+          ÷
+        </button>
       </div>
 
       <!-- ! row3 -->
       <div class="row3 row">
-        <input type="submit" class="col1 col py" id="button" value="π" />
-        <input type="submit" class="col2 col cos" id="button" value="cos" />
-        <input type="submit" class="col3 col log" id="button" value="log" />
-        <input type="submit" class="col4 col num" id="button" value="4" />
-        <input type="submit" class="col5 col num" id="button" value="5" />
-        <input type="submit" class="col6 col num" id="button" value="6" />
-        <input type="submit" class="col7 col mul" id="button" value="×" />
+        <button type="submit" class="col1 col py" id="button" data-value="π">
+          π
+        </button>
+        <button type="submit" class="col2 col cos" id="button" data-value="cos">
+          cos
+        </button>
+        <button type="submit" class="col3 col log" id="button" data-value="log">
+          log
+        </button>
+        <button type="submit" class="col4 col num" id="button" data-value="4">
+          4
+        </button>
+        <button type="submit" class="col5 col num" id="button" data-value="5">
+          5
+        </button>
+        <button type="submit" class="col6 col num" id="button" data-value="6">
+          6
+        </button>
+        <button type="submit" class="col7 col mul" id="button" data-value="×">
+          ×
+        </button>
       </div>
 
       <!-- ! row4 -->
       <div class="row4 row">
-        <input type="submit" class="col1 col e" id="button" value="e" />
-        <input type="submit" class="col2 col tan" id="button" value="tan" />
-        <input type="submit" class="col3 col sqrt" id="button" value="√" />
-        <input type="submit" class="col4 col num" id="button" value="1" />
-        <input type="submit" class="col5 col num" id="button" value="2" />
-        <input type="submit" class="col6 col num" id="button" value="3" />
-        <input type="submit" class="col7 col sub" id="button" value="-" />
+        <button type="submit" class="col1 col e" id="button" data-value="e">
+          e
+        </button>
+        <button type="submit" class="col2 col tan" id="button" data-value="tan">
+          tan
+        </button>
+        <button type="submit" class="col3 col sqrt" id="button" data-value="√">
+          √
+        </button>
+        <button type="submit" class="col4 col num" id="button" data-value="1">
+          1
+        </button>
+        <button type="submit" class="col5 col num" id="button" data-value="2">
+          2
+        </button>
+        <button type="submit" class="col6 col num" id="button" data-value="3">
+          3
+        </button>
+        <button type="submit" class="col7 col sub" id="button" data-value="-">
+          -
+        </button>
       </div>
 
       <!-- ! row5 -->
       <row5 class="row">
-        <input type="submit" class="col1 col ans" id="button" value="Ans" />
-        <input
+        <button type="submit" class="col1 col ans" id="button" data-value="Ans">
+          Ans
+        </button>
+        <button
           type="submit"
           class="col2 col expression"
           id="button"
-          value="EXP"
-        />
-        <input type="submit" class="col3 col expo" id="button" value="x^Y" />
-        <input type="submit" class="col4 col num" id="button" value="0" />
-        <input type="submit" class="col5 col dot" id="button" value="." />
-        <input type="submit" class="col6 col equal" id="button" value="=" />
-        <input type="submit" class="col7 col add" id="button" value="+" />
+          data-value="EXP"
+        >
+          EXP
+        </button>
+        <button
+          type="submit"
+          class="col3 col expo"
+          id="button"
+          data-value="x^Y"
+        >
+          x^y
+        </button>
+        <button type="submit" class="col4 col num" id="button" data-value="0">
+          0
+        </button>
+        <button type="submit" class="col5 col dot" id="button" data-value=".">
+          .
+        </button>
+        <button type="submit" class="col6 col equal" id="button" data-value="=">
+          =
+        </button>
+        <button type="submit" class="col7 col add" id="button" data-value="+">
+          +
+        </button>
       </row5>
     </div>
 
