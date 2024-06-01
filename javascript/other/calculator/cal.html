@@ -10,15 +10,21 @@
     <div class="mainScreen">
       <!-- diplay -->
       <div class="row0 row">
-        <input type="text screen" />
+        <input type="text screen" class="screen up" readonly />
+        <input type="text screen" class="screen down" id="screen" readonly />
       </div>
 
       <!-- buttons -->
 
       <!--! row1 -->
       <div class="row1 row">
-        <input type="submit" class="col1 col" id="button" value="" />
-        <input type="submit" class="col2 col" id="button" value="" />
+        <input type="submit" class="col1 col minus" id="button" value="+/-" />
+        <input
+          type="submit"
+          class="col2 col persentage"
+          id="button"
+          value="%"
+        />
         <input
           type="submit"
           class="col3 col factorial"
@@ -27,12 +33,7 @@
         />
         <input type="submit" class="col4 col braOpen" id="button" value="(" />
         <input type="submit" class="col5 col braClose" id="button" value=")" />
-        <input
-          type="submit"
-          class="col6 col persentage"
-          id="button"
-          value="%"
-        />
+        <input type="submit" class="col6 col del" id="button" value="del" />
         <input type="submit" class="col7 col ce" id="button" value="CE" />
       </div>
 

@@ -1,7 +1,7 @@
 
-commands = ''
-
-let buttons = document.querySelectorAll('.button');
+commands = '';
+let ans = 0;
+let buttons = document.querySelectorAll('.col');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -9,13 +9,19 @@ buttons.forEach((button) => {
         const input = button.value
         if (input === '=')
         {
-            const result = eval(commands)
-            document.getElementById('screen').value = result
-            commands = ''
-        } else
+            const result = eval(commands);
+            document.getElementById('screen').value = result;
+            commands = '';
+        } else if (input === 'CE')
         {
-            commands += input
-            document.getElementById('screen').value = commands
+            commands = '';
+            document.getElementById('screen').value = '';
+        }
+        
+        else
+        {
+            commands += input;
+            document.getElementById('screen').value = commands;
         }
     });
 });
