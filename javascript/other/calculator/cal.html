@@ -1,187 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="cal.css" />
-    <title>calculator</title>
-  </head>
-  <body>
-    <div class="mainScreen">
-      <!-- diplay -->
-      <div class="row0 row">
-        <input type="text screen" class="screen up" readonly />
-        <input type="text screen" class="screen down" id="screen" readonly />
-      </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="cal.css" />
+		<title>calculator</title>
+	</head>
+	<body>
+		<div class="mainScreen">
+			<!-- diplay -->
+			<div class="row0 row">
+				<input
+					type="text"
+					class="screen up"
+					id="secondScreen"
+					readonly
+				/>
+				<input
+					type="text"
+					class="screen down"
+					id="screen"
+					value="0"
+					readonly
+				/>
+			</div>
 
-      <!-- buttons -->
+			<!-- buttons -->
 
-      <!--! row1 -->
-      <div class="row1 row">
-        <button
-          type="submit"
-          class="col1 col minus"
-          id="button"
-          data-value="sign"
-        >
-          +/-
-        </button>
-        <button
-          type="submit"
-          class="col2 col persentage"
-          id="button"
-          data-value="persentage"
-        >
-          %
-        </button>
-        <button
-          type="submit"
-          class="col3 col factorial"
-          id="button"
-          data-value="factorial"
-        >
-          x!
-        </button>
-        <button
-          type="submit"
-          class="col4 col braOpen"
-          id="button"
-          data-value="("
-        >
-          (
-        </button>
-        <button
-          type="submit"
-          class="col5 col braClose"
-          id="button"
-          data-value=")"
-        >
-          )
-        </button>
-        <button type="submit" class="col6 col del" id="button" data-value="del">
-          del
-        </button>
-        <button type="submit" class="col7 col ce" id="button" data-value="CE">
-          CE
-        </button>
-      </div>
+			<!--! row1 -->
+			<div class="row1 row">
+				<button
+					type="submit"
+					class="col1 col minus"
+					id="button"
+					data-value="sign"
+				>
+					+/-
+				</button>
+				<button
+					type="submit"
+					class="col2 col persentage"
+					id="button"
+					data-value="persentage"
+				>
+					%
+				</button>
+				<button
+					type="submit"
+					class="col3 col factorial"
+					id="button"
+					data-value="factorial"
+				>
+					x!
+				</button>
+				<button
+					type="submit"
+					class="col4 col braOpen"
+					id="button"
+					data-value="("
+				>
+					(
+				</button>
+				<button
+					type="submit"
+					class="col5 col braClose"
+					id="button"
+					data-value=")"
+				>
+					)
+				</button>
+				<button
+					type="submit"
+					class="col6 col del"
+					id="button"
+					data-value="del"
+				>
+					del
+				</button>
+				<button
+					type="submit"
+					class="col7 col ce"
+					id="button"
+					data-value="CE"
+				>
+					CE
+				</button>
+			</div>
 
-      <!-- !row2  -->
-      <div class="row2 row">
-        <button type="submit" class="col1 col inv" id="button" data-value="Inv">
-          Inv
-        </button>
-        <button type="submit" class="col2 col sin" id="button" data-value="sin">
-          sin
-        </button>
-        <button type="submit" class="col3 col ln" id="button" data-value="ln">
-          ln
-        </button>
-        <button type="submit" class="col4 col num" id="button" data-value="7">
-          7
-        </button>
-        <button type="submit" class="col5 col num" id="button" data-value="8">
-          8
-        </button>
-        <button type="submit" class="col6 col num" id="button" data-value="9">
-          9
-        </button>
-        <button type="submit" class="col7 col div" id="button" data-value="/">
-          ÷
-        </button>
-      </div>
+			<!-- !row2  -->
+			<div class="row2 row">
+				<button
+					type="submit"
+					class="col1 col inv"
+					id="button"
+					data-value="inv"
+				>
+					Inv
+				</button>
+				<button
+					type="submit"
+					class="col2 col sin"
+					id="button"
+					data-value="sin"
+				>
+					sin
+				</button>
+				<button
+					type="submit"
+					class="col3 col ln"
+					id="button"
+					data-value="ln"
+				>
+					ln
+				</button>
+				<button
+					type="submit"
+					class="col4 col num"
+					id="button"
+					data-value="7"
+				>
+					7
+				</button>
+				<button
+					type="submit"
+					class="col5 col num"
+					id="button"
+					data-value="8"
+				>
+					8
+				</button>
+				<button
+					type="submit"
+					class="col6 col num"
+					id="button"
+					data-value="9"
+				>
+					9
+				</button>
+				<button
+					type="submit"
+					class="col7 col div"
+					id="button"
+					data-value="/"
+				>
+					÷
+				</button>
+			</div>
 
-      <!-- ! row3 -->
-      <div class="row3 row">
-        <button type="submit" class="col1 col pi" id="button" data-value="pi">
-          π
-        </button>
-        <button type="submit" class="col2 col cos" id="button" data-value="cos">
-          cos
-        </button>
-        <button type="submit" class="col3 col log" id="button" data-value="log">
-          log
-        </button>
-        <button type="submit" class="col4 col num" id="button" data-value="4">
-          4
-        </button>
-        <button type="submit" class="col5 col num" id="button" data-value="5">
-          5
-        </button>
-        <button type="submit" class="col6 col num" id="button" data-value="6">
-          6
-        </button>
-        <button type="submit" class="col7 col mul" id="button" data-value="*">
-          ×
-        </button>
-      </div>
+			<!-- ! row3 -->
+			<div class="row3 row">
+				<button
+					type="submit"
+					class="col1 col pi"
+					id="button"
+					data-value="pi"
+				>
+					π
+				</button>
+				<button
+					type="submit"
+					class="col2 col cos"
+					id="button"
+					data-value="cos"
+				>
+					cos
+				</button>
+				<button
+					type="submit"
+					class="col3 col log"
+					id="button"
+					data-value="log"
+				>
+					log
+				</button>
+				<button
+					type="submit"
+					class="col4 col num"
+					id="button"
+					data-value="4"
+				>
+					4
+				</button>
+				<button
+					type="submit"
+					class="col5 col num"
+					id="button"
+					data-value="5"
+				>
+					5
+				</button>
+				<button
+					type="submit"
+					class="col6 col num"
+					id="button"
+					data-value="6"
+				>
+					6
+				</button>
+				<button
+					type="submit"
+					class="col7 col mul"
+					id="button"
+					data-value="*"
+				>
+					×
+				</button>
+			</div>
 
-      <!-- ! row4 -->
-      <div class="row4 row">
-        <button type="submit" class="col1 col e" id="button" data-value="e">
-          e
-        </button>
-        <button type="submit" class="col2 col tan" id="button" data-value="tan">
-          tan
-        </button>
-        <button
-          type="submit"
-          class="col3 col sqrt"
-          id="button"
-          data-value="sqrt"
-        >
-          √
-        </button>
-        <button type="submit" class="col4 col num" id="button" data-value="1">
-          1
-        </button>
-        <button type="submit" class="col5 col num" id="button" data-value="2">
-          2
-        </button>
-        <button type="submit" class="col6 col num" id="button" data-value="3">
-          3
-        </button>
-        <button type="submit" class="col7 col sub" id="button" data-value="-">
-          -
-        </button>
-      </div>
+			<!-- ! row4 -->
+			<div class="row4 row">
+				<button
+					type="submit"
+					class="col1 col e"
+					id="button"
+					data-value="e"
+				>
+					e
+				</button>
+				<button
+					type="submit"
+					class="col2 col tan"
+					id="button"
+					data-value="tan"
+				>
+					tan
+				</button>
+				<button
+					type="submit"
+					class="col3 col sqrt"
+					id="button"
+					data-value="sqrt"
+				>
+					√
+				</button>
+				<button
+					type="submit"
+					class="col4 col num"
+					id="button"
+					data-value="1"
+				>
+					1
+				</button>
+				<button
+					type="submit"
+					class="col5 col num"
+					id="button"
+					data-value="2"
+				>
+					2
+				</button>
+				<button
+					type="submit"
+					class="col6 col num"
+					id="button"
+					data-value="3"
+				>
+					3
+				</button>
+				<button
+					type="submit"
+					class="col7 col sub"
+					id="button"
+					data-value="-"
+				>
+					-
+				</button>
+			</div>
 
-      <!-- ! row5 -->
-      <row5 class="row">
-        <button type="submit" class="col1 col ans" id="button" data-value="ans">
-          Ans
-        </button>
-        <button
-          type="submit"
-          class="col2 col expression"
-          id="button"
-          data-value="exp"
-        >
-          EXP
-        </button>
-        <button
-          type="submit"
-          class="col3 col expo"
-          id="button"
-          data-value="pow"
-        >
-          x^y
-        </button>
-        <button type="submit" class="col4 col num" id="button" data-value="0">
-          0
-        </button>
-        <button type="submit" class="col5 col dot" id="button" data-value=".">
-          .
-        </button>
-        <button type="submit" class="col6 col equal" id="button" data-value="=">
-          =
-        </button>
-        <button type="submit" class="col7 col add" id="button" data-value="+">
-          +
-        </button>
-      </row5>
-    </div>
+			<!-- ! row5 -->
+			<row5 class="row">
+				<button
+					type="submit"
+					class="col1 col ans"
+					id="button"
+					data-value="ans"
+				>
+					Ans
+				</button>
+				<button
+					type="submit"
+					class="col2 col expression"
+					id="button"
+					data-value="exp"
+				>
+					EXP
+				</button>
+				<button
+					type="submit"
+					class="col3 col expo"
+					id="button"
+					data-value="pow"
+				>
+					x^y
+				</button>
+				<button
+					type="submit"
+					class="col4 col num"
+					id="button"
+					data-value="0"
+				>
+					0
+				</button>
+				<button
+					type="submit"
+					class="col5 col dot"
+					id="button"
+					data-value="."
+				>
+					.
+				</button>
+				<button
+					type="submit"
+					class="col6 col equal"
+					id="button"
+					data-value="="
+				>
+					=
+				</button>
+				<button
+					type="submit"
+					class="col7 col add"
+					id="button"
+					data-value="+"
+				>
+					+
+				</button>
+			</row5>
+		</div>
 
-    <script src="cal.js"></script>
-  </body>
+		<script src="cal.js"></script>
+	</body>
 </html>
